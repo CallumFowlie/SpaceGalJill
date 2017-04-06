@@ -1,3 +1,3 @@
 # SpaceGalJill
-SourceControl for SGJ
+SourceControl for SGJ.
 Current model built in GameMaker
