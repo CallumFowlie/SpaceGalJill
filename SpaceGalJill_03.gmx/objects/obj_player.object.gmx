@@ -6,7 +6,7 @@
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
-  <maskName>&lt;undefined&gt;</maskName>
+  <maskName>spr_player_collision</maskName>
   <events>
     <event eventtype="0" enumb="0">
       <action>
@@ -34,6 +34,8 @@ jspd = 25;
 hspd = 0;
 vspd = 0;
 d_jump = false;
+enemy_loc = 0;
+state = scr_move_state;
 </string>
           </argument>
         </arguments>
@@ -56,128 +58,8 @@ d_jump = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Physics and Movement
-
-//LOCAL VARIABLES
-var rkey = keyboard_check(vk_right);
-var lkey = keyboard_check(vk_left);
-var jkey = keyboard_check_pressed(vk_up);
-
-//VERTICAL MOVEMENT
-//Check if player is on the ground
-if place_meeting(x, y+1, obj_solid)
-    {
-    vspd = 0;
-    d_jump = false;
-    //Jump button and function
-    if jkey
-        {
-        vspd = -jspd;
-        }
-    }
-//Player is not on ground, therefore in air
-else
-    {
-    //apply gravity
-    if vspd &lt; 20
-        {
-        vspd += grav;
-        }
-//Double jump function
-    if d_jump = false
-        {
-        if jkey
-            {
-            vspd = -jspd;
-            jump = true;
-            d_jump = true;
-            }
-        }
-    }
-
-//HORIZONTAL MOVEMENT
-//Move right
-if rkey
-    {
-    hspd = spd;
-    image_xscale = 1;
-    }
-//Move left
-if lkey
-    {
-    hspd = -spd;
-    image_xscale = -1;
-    }
-//Not Moving (no keys or both keys)
-if (!rkey &amp;&amp; !lkey) || (rkey &amp;&amp; lkey)
-    {
-    hspd = 0;
-    }
-
-//COLLISIONS
-//Horizontal collisions
-if place_meeting(x+hspd, y, obj_solid)
-    {
-    while !place_meeting(x+sign(hspd), y, obj_solid)
-        {
-        x += sign(hspd)
-        }
-    hspd = 0;
-    }
-
-//Vertical collisions
-if place_meeting(x, y+vspd, obj_solid)
-    {
-    while !place_meeting(x, y+sign(vspd), obj_solid)
-        {
-        y += sign(vspd);
-        }
-        vspd = 0;
-    }
-
-//MOVEMENT VALUES
-x += hspd;
-y += vspd;
-
-//DEFINE SPRITE
-//if player is on the ground
-if place_meeting(x, y+1, obj_solid)
-    {
-    //idle
-    if hspd = 0
-        {
-        sprite_index = spr_player_idle_right;
-        image_speed = 1;
-        }
-    //run
-    if hspd &lt; 0
-        {
-        sprite_index = spr_player_run_right;
-        image_speed = 1;
-        }
-    if hspd &gt; 0
-        {
-        sprite_index = spr_player_run_right;
-        image_speed = 1;
-        }
-    }
-//if player is in the air
-
-else
-    {
-    //going up
-    if vspd &lt;= 0
-        {
-        sprite_index = spr_player_up_right;
-        image_speed = 0.1;
-        }
-    if vspd &gt;= 0
-    //falling
-        {
-        sprite_index = spr_player_fall_right;
-        image_speed = 0.1;
-        }
-    }
+            <string>///Control the player's state
+script_execute(state);
 </string>
           </argument>
         </arguments>
@@ -200,9 +82,11 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///respawn player
-x = x_start;
-y = y_start;
+            <string>///Hurt player
+state = scr_hurt_state;
+//respawn player
+//x = x_start;
+//y = y_start;
 </string>
           </argument>
         </arguments>
@@ -245,6 +129,31 @@ y = y_start;
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
+      </action>
+    </event>
+    <event eventtype="9" enumb="82">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///reset player
+x = xstart;
+y = ystart;
+</string>
+          </argument>
+        </arguments>
       </action>
     </event>
   </events>

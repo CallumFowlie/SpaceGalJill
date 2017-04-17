@@ -16,6 +16,8 @@
       <sprite>sprites\spr_player_run_right</sprite>
       <sprite>sprites\spr_player_up_right</sprite>
       <sprite>sprites\spr_player_fall_right</sprite>
+      <sprite>sprites\spr_player_hurt_right</sprite>
+      <sprite>sprites\spr_player_collision</sprite>
     </sprites>
     <sprites name="Enemy Sprites">
       <sprite>sprites\spr_bugsnake_walk</sprite>
@@ -31,16 +33,26 @@
     <background>background\bk_bRock_bits</background>
   </backgrounds>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <scripts name="Player Scripts">
+      <script>scripts\scr_move_state.gml</script>
+      <script>scripts\scr_hurt_state.gml</script>
+      <script>scripts\scr_shoot_state.gml</script>
+    </scripts>
+    <scripts name="World Scripts">
+      <script>scripts\scr_move.gml</script>
+    </scripts>
+  </scripts>
   <objects name="objects">
     <object>objects\obj_player</object>
     <object>objects\obj_ship</object>
-    <object>objects\obj_solid</object>
     <object>objects\obj_enemy_ground</object>
-    <object>objects\obj_prize</object>
-    <object>objects\obj_move_alien</object>
-    <object>objects\obj_idle_test</object>
-    <object>objects\obj_turn_left</object>
-    <object>objects\obj_turn_right</object>
+    <objects name="World Objects">
+      <object>objects\obj_turn_left</object>
+      <object>objects\obj_turn_right</object>
+      <object>objects\obj_solid</object>
+      <object>objects\obj_prize</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_flat</room>
