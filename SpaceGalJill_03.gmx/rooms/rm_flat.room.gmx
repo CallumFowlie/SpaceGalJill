@@ -53,14 +53,11 @@
   <instances>
     <instance objName="obj_player" x="3136" y="1920" name="inst_A7388ADA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="0" y="1984" name="inst_1D7DE32D" locked="0" code="" scaleX="112" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_turn_left" x="1728" y="1920" name="inst_2237915C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_turn" x="1728" y="1920" name="inst_2237915C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_enemy_ground" x="2112" y="1984" name="inst_A3186199" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_turn_right" x="2432" y="1920" name="inst_4377C6E5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="4608" y="1664" name="inst_7C18906E" locked="0" code="" scaleX="7" scaleY="5" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="5056" y="832" name="inst_98D21841" locked="0" code="" scaleX="8" scaleY="18" colour="4294967295" rotation="0"/>
-    <instance objName="obj_turn_right" x="4544" y="1920" name="inst_117CA253" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_turn_left" x="3968" y="1920" name="inst_B1BCC0A5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_enemy_ground" x="4288" y="1984" name="inst_4D42D1B5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_turn" x="2560" y="1920" name="inst_3CDD462A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bk_fRock" x="0" y="1984" w="64" h="64" xo="152" yo="152" id="10001120" name="inst_C7A47F3C" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

@@ -1,22 +1,15 @@
 ///scr_hurt_state()
-//define sprite
+//DEFINE SPRITE
 sprite_index = spr_player_hurt_right;
 
-//where is the enemy?
-if place_meeting(x-1, y, obj_enemy_ground)
-    {
-    enemy_loc = -1;
-    }
-else
-    {
-    enemy_loc = 1;
-    }
+//BOUNCE DIRECTION?
+//left enemy = 1; right enemy = -1
+bounce_dir = sign(x - enemy_x);
 
-//move Jill
-//VERTICAL
-if place_meeting(x+enemy_loc, y, obj_enemy_ground)
+if place_meeting(x-bounce_dir, y, obj_enemy_ground)
     {
     vspd = -15;
+    hspd = 10*bounce_dir;
     }
 else
     {
@@ -25,18 +18,12 @@ else
         vspd += grav;
         }
     }
-//HORIZONTAL !!!BROKEN!!!
-if place_meeting(x+enemy_loc, y, obj_enemy_ground)
-    {
-    hspd = -15*enemy_loc;
-    }
-
 //MOVEMENT
 scr_move(obj_solid);
 
-//remove health
+//REMOVE HEALTH
 
-//change state back to move state
+//CHANGE STATE BACK TO MOVE STATE
 if (place_meeting(x, y+1, obj_solid) && vspd >= 0)
     {
     state = scr_move_state;

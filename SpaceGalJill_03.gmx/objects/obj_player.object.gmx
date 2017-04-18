@@ -26,15 +26,13 @@
           <argument>
             <kind>1</kind>
             <string>///Initialise Variables
-x_start = x;
-y_start = y;
 grav = 1;
 spd = 8;
 jspd = 25;
 hspd = 0;
 vspd = 0;
 d_jump = false;
-enemy_loc = 0;
+enemy_x = 0;
 state = scr_move_state;
 </string>
           </argument>
@@ -84,38 +82,12 @@ script_execute(state);
             <kind>1</kind>
             <string>///Hurt player
 state = scr_hurt_state;
-//respawn player
-//x = x_start;
-//y = y_start;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
     <event eventtype="7" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///respawn player
-//x = x_start;
-//y = y_start;
-</string>
-          </argument>
-        </arguments>
-      </action>
       <action>
         <libid>1</libid>
         <id>223</id>
