@@ -37,6 +37,11 @@
       <script>scripts\scr_hurt_state.gml</script>
       <script>scripts\scr_shoot_state.gml</script>
     </scripts>
+    <scripts name="Enemy Scripts">
+      <script>scripts\scr_enemy_move.gml</script>
+      <script>scripts\scr_enemy_shrink.gml</script>
+      <script>scripts\scr_enemy_pop.gml</script>
+    </scripts>
     <scripts name="World Scripts">
       <script>scripts\scr_move.gml</script>
     </scripts>
